@@ -1,7 +1,25 @@
+.main_container {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.slider_content {
+    display: grid;
+    column-gap: 10px;
+    grid-auto-flow: column;
+    max-width: 550px;
+    margin: 0 auto;
+    overflow-y: hidden;
+	overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
 .container {
     width: 550px;
     height: 550px;
-    margin: 250px auto;
+    margin: 220px auto;
+    margin-bottom: 50px;
     border: 1px solid #ccc;
     border-radius: 15%;
     background-position: center;
@@ -9,6 +27,8 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    scroll-snap-align: start;
+    scrollbar-width: none;
 }
 
 .card {
@@ -24,6 +44,10 @@
     backdrop-filter: blur(1.9rem);
     color: rgb(228, 223, 223);
     font: 1.5rem 'Roboto', sans-serif;
+}
+
+.location {
+    display: none;
 }
 
 .card_content {
@@ -44,8 +68,22 @@
 .icon i{
     font-size: 1.3rem;
     margin-top: 4px;
+    height: 20px;
 }
 
+.icon:hover {
+    cursor: pointer;
+}
+
+.icon i:hover ~ .location{
+    display: inline;
+    position: absolute;
+    font-size: 13px;
+    left: -40px;
+    top: 8px;
+    color: rgb(228, 223, 223, 0.9);
+    font-weight: 700;
+}
 
 .info {
     display: flex;
@@ -64,6 +102,7 @@
 .info p{
     font-size: 1.1rem;
     color: rgb(228, 223, 223, 0.8);
+    margin-top: 5px;
 }
 
 .info span{
@@ -87,6 +126,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: auto;
 }
 
 .find_more_bubble:hover{
@@ -100,4 +140,13 @@
 .find_more_bubble:hover i{
     margin-left: 8px;
     transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+  
+a:visited {
+    color: rgb(228, 223, 223); /* Change color for visited links */
 }
